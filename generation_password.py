@@ -16,11 +16,11 @@ def generate_password(length, chars):
     return password
 
 
-def save_password():
+def save_password(name):
     """Saved password in new File"""
     new_file = open('new_password.txt', 'a')
     for _ in range(1, count + 1):
-        new_file.write(generate_password(length, chars) + '\n')
+        new_file.write(f'{name}: {generate_password(length, chars)}\n')
     new_file.close()
     return new_file
 
@@ -29,7 +29,7 @@ try:
     count = input('Какое колличество паролей сгенерировать:' + '\n')
     count = int(count)
 except ValueError:
-    count = input('Введите целое число!(Если программа не получит целове число будет сгенерирован пустой пароль)\n')
+    count = input('Введите целое число!(Если программа не получит целове пароль не будет сгенерирован)\n')
     count = int(count)
 
 try:
@@ -63,9 +63,11 @@ if symbols.lower() in ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes'):
 else:
     chars += '0'
 
+name = input('Как назвать ваш пароль?\n')
+
 save = input('Хотите сохранить пароль в файл?\n')
 if save.lower() in ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes'):
-    save_password()
+    save_password(name)
 else:
     print(f'Ваш пароль: {generate_password(length, chars)}')
 
