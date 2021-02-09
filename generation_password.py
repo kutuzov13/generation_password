@@ -1,6 +1,6 @@
 import random
 
-# Шаблоны заведения пароля
+# Templates for generator
 digits = '0123456789'
 lowercase_letters = 'abcdefghijklmnopqrstuvwxyz'
 uppercase_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -51,8 +51,8 @@ if in_big_letters.lower() in ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes'):
 else:
     chars += '0'
 
-in_small_lettrs = input('Включать ли строчные буквы abcdefghijklmnopqrstuvwxyz?\n')
-if in_small_lettrs.lower() in ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes'):
+in_small_letter = input('Включать ли строчные буквы abcdefghijklmnopqrstuvwxyz?\n')
+if in_small_letter.lower() in ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes'):
     chars += lowercase_letters
 else:
     chars += '0'
@@ -65,9 +65,9 @@ else:
 
 save = input('Хотите сохранить пароль в файл?\n')
 if save.lower() in ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes'):
-    print(save_password())
+    save_password()
 else:
-    print('Как хотите но вот вам на всякий случай пароль!', generate_password(length, chars))
+    print(f'Ваш пароль: {generate_password(length, chars)}')
 
 # Генерация нужного количества паролей:
 for p in range(count):
