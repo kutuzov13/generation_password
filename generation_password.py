@@ -26,20 +26,20 @@ def save_password(name):
 
 
 try:
-    count = input('Какое колличество паролей сгенерировать:' + '\n')
+    count = input('Какое колличество паролей сгенерировать:\n')
     count = int(count)
 except ValueError:
     count = input('Введите целое число!(Если программа не получит целове пароль не будет сгенерирован)\n')
     count = int(count)
 
 try:
-    length = input('Длинна пароля:' + '\n')
+    length = input('Длинна пароля:\n')
     length = int(length)
 except ValueError:
     length = input('Введите целое число!(Если программа не получит целове число будет сгенерирован пустой пароль)\n')
     length = int(length)
 
-in_numbers = input('Включать ли цифры 0123456789?' + '\n')
+in_numbers = input('Включать ли цифры 0123456789?\n')
 if in_numbers.lower() in ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes'):
     chars += digits
 else:
