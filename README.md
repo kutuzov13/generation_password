@@ -1,7 +1,7 @@
 # Generator password
 ### Installation
 ```bash
-git clone HTTP
+git clone https://github.com/kutuzov13/generation_password.git
 cd generation_password
 python generation_password.py
 ```
