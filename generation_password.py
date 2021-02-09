@@ -19,7 +19,7 @@ def generate_password(length, chars):
 def save_password(name):
     """Saved password in new File"""
     new_file = open('You_Password.txt', 'a')
-    for _ in range(1, count + 1):
+    for _ in range(count):
         new_file.write(f'{name}: {generate_password(length, chars)}\n')
     new_file.close()
     return new_file
