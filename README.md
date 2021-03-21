@@ -1,4 +1,4 @@
-# Generator password
+# Generator Password
 ### Installation
 ```bash
 git clone https://github.com/kutuzov13/generation_password.git
