@@ -8,15 +8,15 @@ punctuation = '!#$%&*+-=?@^_'
 chars = ''
 
 
-def generate_password(length, chars):
+def generate_password(length_password, chars_password):
     """Generation password."""
     password = ''
-    for _ in range(length): 
+    for _ in range(length_password):
         password += random.choice(chars)
     return password
 
 
-def save_password(name):
+def save_password(name_password):
     """Saved password in new File."""
     new_file = open('You_Password.txt', 'a')
     for _ in range(count):
