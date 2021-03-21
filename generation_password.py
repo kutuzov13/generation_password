@@ -12,7 +12,7 @@ def generate_password(length_password, chars_password):
     """Generation password."""
     password = ''
     for _ in range(length_password):
-        password += random.choice(chars)
+        password += random.choice(chars_password)
     return password
 
 
@@ -20,7 +20,7 @@ def save_password(name_password):
     """Saved password in new File."""
     new_file = open('You_Password.txt', 'a')
     for _ in range(count):
-        new_file.write(f'{name}: {generate_password(length, chars)}\n')
+        new_file.write(f'{name_password}: {generate_password(length, chars)}\n')
     new_file.close()
     return new_file
 
