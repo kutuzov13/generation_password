@@ -12,24 +12,28 @@ Script for creating strong passwords.
  - Name your passwords.
 
  - All passwords will be neatly saved to a .txt file after creation.
+   
+ - It is possible to add new passwords.
 
 
 ### Install
 
-Clone a repository from GitHub
+Clone a repository from GitHub.
 ```bash
 git clone https://github.com/kutuzov13/generation_password.git
 ```
 
-Go to directory
+Go to directory.
 ```bash
 cd generation_password
 ```
 
 ### Run
-Run Script
+Run Script.
 ```bash
 python generation_password.py
 ```
 
+You will be presented with several options for generating passwords.
 
+Answer the questions "Yes" or "No".
