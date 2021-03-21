@@ -37,3 +37,9 @@ python generation_password.py
 You will be presented with several options for generating passwords.
 
 Answer the questions "Yes" or "No".
+
+### Target
+
+Storing passwords in one place.
+
+Various strong passwords
