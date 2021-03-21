@@ -63,11 +63,11 @@ if symbols.lower() in ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes'):
 else:
     chars += '0'
 
-name = input('How to name your password?\n')
+user_name_password = input('How to user_name_password your password?\n')
 
 save = input('Want to save your password to a file?\n')
 if save.lower() in ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes'):
-    save_password(name)
+    save_password(user_name_password)
 else:
     print(f'Your password: {generate_password(length, chars)}')
 
