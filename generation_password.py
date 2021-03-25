@@ -7,7 +7,7 @@ uppercase_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 punctuation = '!#$%&*+-=?@^_'
 chars = ''
 
-answer_options = ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes')
+answer_options = ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes', 'y', 'Y')
 
 
 def generate_password(length_password, chars_password):
