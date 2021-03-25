@@ -73,6 +73,6 @@ if save.lower() in answer_options:
 else:
     print(f'Your password: {generate_password(length, chars)}')
 
-# Генерация нужного количества паролей:
+# Generating the required number of passwords:
 for passwords in range(count):
     generate_password(length, chars)
