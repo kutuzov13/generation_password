@@ -2,11 +2,13 @@ import random
 
 
 # Templates for generator
-digits = '0123456789'
-lowercase_letters = 'abcdefghijklmnopqrstuvwxyz'
-uppercase_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-punctuation = '!#$%&*+-=?@^_'
-chars = ''
+DIGITS = '0123456789'
+LOWERCASE_LETTERS = 'abcdefghijklmnopqrstuvwxyz'
+UPPERCASE_LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+PUNCTUATION = '!#$%&*+-=?@^_'
+CHARS = ''
+
+ANSWER_OPTIONS = ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes', 'y', 'Y')
 
 
 def generate_password(length_password: int, chars_password: str) -> str:
@@ -19,9 +21,9 @@ def generate_password(length_password: int, chars_password: str) -> str:
 
 def save_password(name_password: str):
     """Saved password in new File."""
-    new_file = open('You_Password.txt', 'a')
+    new_file = open('You Password.txt', 'a')
     for _ in range(count):
-        new_file.write(f'{name_password}: {generate_password(length, chars)}\n')
+        new_file.write(f'{name_password}: {generate_password(length, CHARS)}\n')
     new_file.close()
     return new_file
 
@@ -41,37 +43,37 @@ except ValueError:
     length = int(length)
 
 in_numbers = input('Should numbers be included 0123456789?\n')
-if in_numbers.lower() in ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes'):
-    chars += digits
+if in_numbers.lower() in ANSWER_OPTIONS:
+    CHARS += DIGITS
 else:
-    chars += '0'
+    CHARS += '0'
 
 in_big_letters = input('Whether to include uppercase letters ABCDEFGHIJKLMNOPQRSTUVWXYZ?\n')
-if in_big_letters.lower() in ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes'):
-    chars += uppercase_letters
+if in_big_letters.lower() in ANSWER_OPTIONS:
+    CHARS += UPPERCASE_LETTERS
 else:
-    chars += '0'
+    CHARS += '0'
 
 in_small_letter = input('Should I include lowercase letters abcdefghijklmnopqrstuvwxyz?\n')
-if in_small_letter.lower() in ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes'):
-    chars += lowercase_letters
+if in_small_letter.lower() in ANSWER_OPTIONS:
+    CHARS += LOWERCASE_LETTERS
 else:
-    chars += '0'
+    CHARS += '0'
 
 symbols = input('Should symbols be included "<!#$%&*+-=?№/@_>" ?\n')
-if symbols.lower() in ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes'):
-    chars += punctuation
+if symbols.lower() in ANSWER_OPTIONS:
+    CHARS += PUNCTUATION
 else:
-    chars += '0'
+    CHARS += '0'
 
 user_name_password = input('How to user_name_password your password?\n')
 
 save = input('Want to save your password to a file?\n')
-if save.lower() in ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes'):
+if save.lower() in ANSWER_OPTIONS:
     save_password(user_name_password)
 else:
-    print(f'Your password: {generate_password(length, chars)}')
+    print(f'Your password: {generate_password(length, CHARS)}')
 
-# Генерация нужного количества паролей:
-for p in range(count):
-    generate_password(length, chars)
+# Generating the required number of passwords:
+for passwords in range(count):
+    generate_password(length, CHARS)

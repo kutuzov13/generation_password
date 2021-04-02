@@ -1,3 +1,7 @@
 venv
+<<<<<<< HEAD
 .idea
 *.txt
+=======
+.idea
+>>>>>>> origin/master

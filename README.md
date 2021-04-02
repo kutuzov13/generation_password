@@ -19,18 +19,18 @@ Script for creating strong passwords.
 ### Install
 
 Clone a repository from GitHub.
-```bash
+```
 git clone https://github.com/kutuzov13/generation_password.git
 ```
 
 Go to directory.
-```bash
+```
 cd generation_password
 ```
 
 ### Run
 Run Script.
-```bash
+```
 python generation_password.py
 ```
 
