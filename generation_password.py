@@ -1,5 +1,6 @@
 import random
 
+
 # Templates for generator
 digits = '0123456789'
 lowercase_letters = 'abcdefghijklmnopqrstuvwxyz'
@@ -8,7 +9,7 @@ punctuation = '!#$%&*+-=?@^_'
 chars = ''
 
 
-def generate_password(length_password, chars_password):
+def generate_password(length_password: int, chars_password: str) -> str:
     """Generation password."""
     password = ''
     for _ in range(length_password):
@@ -16,7 +17,7 @@ def generate_password(length_password, chars_password):
     return password
 
 
-def save_password(name_password):
+def save_password(name_password: str):
     """Saved password in new File."""
     new_file = open('You_Password.txt', 'a')
     for _ in range(count):
