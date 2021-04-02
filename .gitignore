@@ -1,7 +1,5 @@
 venv
-<<<<<<< HEAD
 .idea
 *.txt
-=======
-.idea
->>>>>>> origin/master
+.mypy_cache
+

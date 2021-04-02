@@ -5,13 +5,13 @@ import random
 DIGITS = '0123456789'
 LOWERCASE_LETTERS = 'abcdefghijklmnopqrstuvwxyz'
 UPPERCASE_LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-PUNCTUATION = '!#$%&*+-=?@^_'
+PUNCTUATION = '#$%&@'
 CHARS = ''
 
 ANSWER_OPTIONS = ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes', 'y', 'Y')
 
 
-def generate_password(length_password: int, chars_password: str) -> str:
+def generate_password(length_password, chars_password) -> str:
     """Generation password."""
     password = ''
     for _ in range(length_password):
@@ -21,26 +21,20 @@ def generate_password(length_password: int, chars_password: str) -> str:
 
 def save_password(name_password: str):
     """Saved password in new File."""
-    new_file = open('You Password.txt', 'a')
-    for _ in range(count):
+    with open('You Password.txt', 'a') as new_file:
         new_file.write(f'{name_password}: {generate_password(length, CHARS)}\n')
-    new_file.close()
     return new_file
 
 
 try:
-    count = input('How many passwords to generate:\n')
-    count = int(count)
+    count = int(input('How many passwords to generate:\n'))
 except ValueError:
-    count = input('Please enter an integer!\n')
-    count = int(count)
+    count = int(input('Please enter an integer!\n'))
 
 try:
-    length = input('Password length:\n')
-    length = int(length)
+    length = int(input('Password length:\n'))
 except ValueError:
-    length = input('Please enter an integer!\n')
-    length = int(length)
+    length = int(input('Please enter an integer!\n'))
 
 in_numbers = input('Should numbers be included 0123456789?\n')
 if in_numbers.lower() in ANSWER_OPTIONS:
@@ -48,19 +42,19 @@ if in_numbers.lower() in ANSWER_OPTIONS:
 else:
     CHARS += '0'
 
-in_big_letters = input('Whether to include uppercase letters ABCDEFGHIJKLMNOPQRSTUVWXYZ?\n')
+in_big_letters = input('Whether to include uppercase letters ?\n')
 if in_big_letters.lower() in ANSWER_OPTIONS:
     CHARS += UPPERCASE_LETTERS
 else:
     CHARS += '0'
 
-in_small_letter = input('Should I include lowercase letters abcdefghijklmnopqrstuvwxyz?\n')
+in_small_letter = input('Should I include lowercase letters ?\n')
 if in_small_letter.lower() in ANSWER_OPTIONS:
     CHARS += LOWERCASE_LETTERS
 else:
     CHARS += '0'
 
-symbols = input('Should symbols be included "<!#$%&*+-=?№/@_>" ?\n')
+symbols = input('Should symbols be included "#$%&@" ?\n')
 if symbols.lower() in ANSWER_OPTIONS:
     CHARS += PUNCTUATION
 else:
@@ -75,5 +69,4 @@ else:
     print(f'Your password: {generate_password(length, CHARS)}')
 
 # Generating the required number of passwords:
-for passwords in range(count):
-    generate_password(length, CHARS)
+generate_password(length, CHARS)
