@@ -42,4 +42,4 @@ Answer the questions "Yes" or "No".
 
 Storing passwords in one place.
 
-Various strong passwords
+Various strong passwords.
