@@ -1,11 +1,11 @@
 import random
-
+import string
 
 # Templates for generator
-DIGITS = '0123456789'
-LOWERCASE_LETTERS = 'abcdefghijklmnopqrstuvwxyz'
-UPPERCASE_LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-PUNCTUATION = '#$%&@'
+DIGITS = string.digits
+LOWERCASE_LETTERS = string.ascii_lowercase
+UPPERCASE_LETTERS = string.ascii_uppercase
+PUNCTUATION = string.punctuation
 CHARS = ''
 
 ANSWER_OPTIONS = ('Да', 'ДА', 'да', 'Yes', 'YES', 'yes', 'y', 'Y')
@@ -54,7 +54,7 @@ if in_small_letter.lower() in ANSWER_OPTIONS:
 else:
     CHARS += '0'
 
-symbols = input('Should symbols be included "#$%&@" ?\n')
+symbols = input('Should symbols be included  ?\n')
 if symbols.lower() in ANSWER_OPTIONS:
     CHARS += PUNCTUATION
 else:
